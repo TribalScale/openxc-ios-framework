@@ -159,6 +159,7 @@
 				TargetAttributes = {
 					3A1017051D5941C8006C5E93 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -359,6 +360,7 @@
 				PRODUCT_NAME = openXCiOSFramework;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -381,6 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.buglabs.openxc-ios-framework";
 				PRODUCT_NAME = openXCiOSFramework;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
