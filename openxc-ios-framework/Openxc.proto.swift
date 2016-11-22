@@ -40,7 +40,7 @@ final public class VehicleMessage : GeneratedMessage {
 
     //Enum type declaration start 
 
-    public enum `Type`:Int32, CustomDebugStringConvertible, CustomStringConvertible {
+    public enum MessageType:Int32, CustomDebugStringConvertible, CustomStringConvertible {
       case can = 1
       case simple = 2
       case diagnostic = 3
@@ -55,7 +55,7 @@ final public class VehicleMessage : GeneratedMessage {
         case .commandResponse: return "COMMAND_RESPONSE"
         }
       }
-      public static func fromString(str:String) throws -> VehicleMessage.`Type` {
+      public static func fromString(str:String) throws -> VehicleMessage.MessageType {
         switch str {
         case "CAN":  return .can
         case "SIMPLE":  return .simple
@@ -80,7 +80,7 @@ final public class VehicleMessage : GeneratedMessage {
 
     //Enum type declaration end 
 
-  public fileprivate(set) var type:VehicleMessage.`Type` = .can
+  public fileprivate(set) var type:VehicleMessage.MessageType = .can
   public fileprivate(set) var hasType:Bool = false
   public fileprivate(set) var canMessage:CanMessage!
   public fileprivate(set) var hasCanMessage:Bool = false
@@ -330,7 +330,7 @@ final public class VehicleMessage : GeneratedMessage {
               return builderResult.hasType
           }
       }
-      public var type:VehicleMessage.`Type` {
+      public var type:VehicleMessage.MessageType {
           get {
               return builderResult.type
           }
@@ -340,7 +340,7 @@ final public class VehicleMessage : GeneratedMessage {
           }
       }
     @discardableResult
-      public func setType(_ value:VehicleMessage.`Type`) -> VehicleMessage.Builder {
+      public func setType(_ value:VehicleMessage.MessageType) -> VehicleMessage.Builder {
         self.type = value
         return self
       }
@@ -711,7 +711,7 @@ final public class VehicleMessage : GeneratedMessage {
 
         case 8:
           let valueInttype = try codedInputStream.readEnum()
-          if let enumstype = `Type`(rawValue: valueInttype){
+          if let enumstype = MessageType(rawValue: valueInttype){
                type = enumstype
           } else {
                try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueInttype))
@@ -1242,7 +1242,7 @@ final public class ControlCommand : GeneratedMessage {
 
     //Enum type declaration start 
 
-    public enum `Type`:Int32, CustomDebugStringConvertible, CustomStringConvertible {
+    public enum MessageType:Int32, CustomDebugStringConvertible, CustomStringConvertible {
       case version = 1
       case deviceId = 2
       case diagnostic = 3
@@ -1269,7 +1269,7 @@ final public class ControlCommand : GeneratedMessage {
         case .platform: return "PLATFORM"
         }
       }
-      public static func fromString(str:String) throws -> ControlCommand.`Type` {
+      public static func fromString(str:String) throws -> ControlCommand.MessageType {
         switch str {
         case "VERSION":  return .version
         case "DEVICE_ID":  return .deviceId
@@ -1306,7 +1306,7 @@ final public class ControlCommand : GeneratedMessage {
 
     //Enum type declaration end 
 
-  public fileprivate(set) var type:ControlCommand.`Type` = .version
+  public fileprivate(set) var type:ControlCommand.MessageType = .version
   public fileprivate(set) var hasType:Bool = false
   public fileprivate(set) var diagnosticRequest:DiagnosticControlCommand!
   public fileprivate(set) var hasDiagnosticRequest:Bool = false
@@ -1588,7 +1588,7 @@ final public class ControlCommand : GeneratedMessage {
               return builderResult.hasType
           }
       }
-      public var type:ControlCommand.`Type` {
+      public var type:ControlCommand.MessageType {
           get {
               return builderResult.type
           }
@@ -1598,7 +1598,7 @@ final public class ControlCommand : GeneratedMessage {
           }
       }
     @discardableResult
-      public func setType(_ value:ControlCommand.`Type`) -> ControlCommand.Builder {
+      public func setType(_ value:ControlCommand.MessageType) -> ControlCommand.Builder {
         self.type = value
         return self
       }
@@ -2055,7 +2055,7 @@ final public class ControlCommand : GeneratedMessage {
 
         case 8:
           let valueInttype = try codedInputStream.readEnum()
-          if let enumstype = `Type`(rawValue:valueInttype){
+          if let enumstype = MessageType(rawValue:valueInttype){
                type = enumstype
           } else {
                try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueInttype))
@@ -5403,7 +5403,7 @@ final public class CommandResponse : GeneratedMessage {
     return fieldCheck
   }
 
-  public fileprivate(set) var type:ControlCommand.`Type` = .version
+  public fileprivate(set) var type:ControlCommand.MessageType = .version
   public fileprivate(set) var hasType:Bool = false
   public fileprivate(set) var message:String = ""
   public fileprivate(set) var hasMessage:Bool = false
@@ -5546,7 +5546,7 @@ final public class CommandResponse : GeneratedMessage {
               return builderResult.hasType
           }
       }
-      public var type:ControlCommand.`Type` {
+      public var type:ControlCommand.MessageType {
           get {
               return builderResult.type
           }
@@ -5556,7 +5556,7 @@ final public class CommandResponse : GeneratedMessage {
           }
       }
     @discardableResult
-      public func setType(_ value:ControlCommand.`Type`) -> CommandResponse.Builder {
+      public func setType(_ value:ControlCommand.MessageType) -> CommandResponse.Builder {
         self.type = value
         return self
       }
@@ -5670,7 +5670,7 @@ final public class CommandResponse : GeneratedMessage {
 
         case 8:
           let valueInttype = try codedInputStream.readEnum()
-          if let enumstype = `Type`(rawValue:valueInttype){
+          if let enumstype = ControlCommand.MessageType(rawValue: valueInttype) {
                type = enumstype
           } else {
                try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueInttype))
@@ -6998,7 +6998,7 @@ final public class DynamicField : GeneratedMessage {
 
     //Enum type declaration start 
 
-    public enum `Type`:Int32, CustomDebugStringConvertible, CustomStringConvertible {
+    public enum MessageType:Int32, CustomDebugStringConvertible, CustomStringConvertible {
       case `String` = 1
       case num = 2
       case bool = 3
@@ -7009,7 +7009,7 @@ final public class DynamicField : GeneratedMessage {
         case .bool: return "BOOL"
         }
       }
-      public static func fromString(str:String) throws -> DynamicField.`Type` {
+      public static func fromString(str:String) throws -> DynamicField.MessageType {
         switch str {
         case "STRING":  return .`String`
         case "NUM":  return .num
@@ -7030,7 +7030,7 @@ final public class DynamicField : GeneratedMessage {
 
     //Enum type declaration end 
 
-  public fileprivate(set) var type:DynamicField.`Type` = .`String`
+  public fileprivate(set) var type:DynamicField.MessageType = .`String`
   public fileprivate(set) var hasType:Bool = false
   public fileprivate(set) var stringValue:String = ""
   public fileprivate(set) var hasStringValue:Bool = false
@@ -7191,7 +7191,7 @@ final public class DynamicField : GeneratedMessage {
               return builderResult.hasType
           }
       }
-      public var type:DynamicField.`Type` {
+      public var type:DynamicField.MessageType {
           get {
               return builderResult.type
           }
@@ -7201,7 +7201,7 @@ final public class DynamicField : GeneratedMessage {
           }
       }
     @discardableResult
-      public func setType(_ value:DynamicField.`Type`) -> DynamicField.Builder {
+      public func setType(_ value:DynamicField.MessageType) -> DynamicField.Builder {
         self.type = value
         return self
       }
@@ -7343,7 +7343,7 @@ final public class DynamicField : GeneratedMessage {
 
         case 8:
           let valueInttype = try codedInputStream.readEnum()
-          if let enumstype = `Type`(rawValue:valueInttype){
+          if let enumstype = MessageType(rawValue:valueInttype){
                type = enumstype
           } else {
                try unknownFieldsBuilder.mergeVarintField(fieldNumber: 1, value:Int64(valueInttype))
